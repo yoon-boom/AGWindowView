@@ -306,10 +306,14 @@ static BOOL IS_IOS_8_OR_HIGHER()
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
     id hitView = [super hitTest:point withEvent:event];
-    if (hitView == self && self.onlySubviewsCapturesTouch)
+    if (hitView == self.sendTouchToView) {
+        return self.sendTouchToView;
+    }
+    else if (hitView == self && self.onlySubviewsCapturesTouch)
     {
         return nil;
     }
+    
     return hitView;
 }
 

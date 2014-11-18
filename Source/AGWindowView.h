@@ -41,6 +41,7 @@
 @property (nonatomic, copy) void (^onDidMoveToWindow)(void);
 @property (nonatomic, copy) void (^onDidMoveOutOfWindow)(void);
 @property (nonatomic, assign) BOOL onlySubviewsCapturesTouch;
+@property (nonatomic, strong) UIView *sendTouchToView;
 
 - (id)initAndAddToWindow:(UIWindow *)window;
 - (id)initAndAddToKeyWindow;
